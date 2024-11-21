@@ -7,6 +7,13 @@ set expandtab
 set smartindent
 colorscheme desert 
 
-let mapleader = " "
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
 
+let mapleader = " "
 nnoremap <leader>pv :Vex<CR>
+nnoremap <Leader><CR> :so ~/.vimrc<CR> 
+nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>pf :Files<CR> 
